@@ -29,7 +29,7 @@ var app = angular
       });
   })
 
-  .constant('FIREBASE_URL', 'https://tldrapp.firebaseio.com/');
+  .constant('FIREBASE_URL', 'https://YOUR-FIREBASE-App.firebaseio.com/');
 
 
 
