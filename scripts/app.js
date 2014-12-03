@@ -24,12 +24,30 @@ var app = angular
         templateUrl: 'views/main.html',
         controller: 'PostsCtrl'
       })
+      .when('/register', {
+  templateUrl: 'views/register.html',
+  controller: 'loginController',
+  resolve: {
+    user: function(Auth) {
+      return Auth.resolveUser();
+    }
+  }
+})
+ .when('/login', {
+  templateUrl: 'views/login.html',
+  controller: 'loginController',
+  resolve: {
+    user: function(Auth) {
+      return Auth.resolveUser();
+    }
+  }
+})     
       .otherwise({
         redirectTo: '/'
       });
   })
 
-  .constant('FIREBASE_URL', 'https://YOUR-FIREBASE-App.firebaseio.com/');
+  .constant('FIREBASE_URL', 'https://YOUR-FB-APP.firebaseio.com/');
 
 
 
